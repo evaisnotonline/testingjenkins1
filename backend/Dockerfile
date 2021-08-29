@@ -1,6 +1,8 @@
 FROM python:3.7
 
-WORKDIR /app
+WORKDIR /testingjenkins1/backend
+
+COPY requirements.txt .
 
 RUN pip install -r requirements.txt
 
