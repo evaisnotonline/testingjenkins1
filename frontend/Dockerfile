@@ -1,8 +1,10 @@
 FROM python:3.7
 
-WORKDIR /app
+WORKDIR /testingjenkins1/frontend
 
-RUN pip3 install -r requirements.txt
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
 
 COPY . .
 
