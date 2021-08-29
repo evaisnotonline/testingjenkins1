@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+        backend:
+                build: ./backend
+                container_name: backend
+                ports:
+                        - target: 5001
+                          published: 5001
+                depends_on:
+                        - "database"
+        database:
+                image: mysql:latest
+                container_name: database
+        frontend:
+                build: ./frontend
+                container_name: frontend
+                ports:
+                        - target: 5000
+                        - published: 5000
+                depends_on:
+                        - "backend"
